@@ -1,0 +1,72 @@
+﻿@model examlast.Models.Qmodel
+
+@{
+    ViewData["Title"] = "questpage";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<hr />
+@await Component.InvokeAsync("xx")
+<div class="row">
+    <div class="col-md-4">
+        <
+            <form asp-action="questpage">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="dropdown">
+
+
+                </div>
+
+                <div style="padding-left: 50px" class="form-group">
+                    <label asp-for="QFull" class="control-label"> Soruyu giriniz</label>
+                    <input asp-for="QFull" class="form-control" />
+                    <span asp-validation-for="QFull" class="text-danger"></span>
+                </div>
+
+                <div style="padding-left: 50px" class="form-group">
+                    <label asp-for="QA" class="control-label">A</label>
+                    <input asp-for="QA" class="form-control" />
+                    <span asp-validation-for="QA" class="text-danger"></span>
+                </div>
+                <div style="padding-left: 50px" class="form-group">
+                    <label asp-for="QB" class="control-label">B</label>
+                    <input asp-for="QB" class="form-control" />
+                    <span asp-validation-for="QB" class="text-danger"></span>
+                </div>
+                <div style="padding-left: 50px" class="form-group">
+                    <label asp-for="QC" class="control-label">C</label>
+                    <input asp-for="QC" class="form-control" />
+                    <span asp-validation-for="QC" class="text-danger"></span>
+                </div>
+                <div style="padding-left: 50px" class="form-group">
+                    <label asp-for="QD" class="control-label">D</label>
+                    <input asp-for="QD" class="form-control" />
+                    <span asp-validation-for="QD" class="text-danger"></span>
+                </div>
+                <div style="padding-left: 50px" class="form-group">
+                    <h4>Doğru Cevap </h4>
+                    <select id="kategori" name="kategoriler">
+
+
+                        <option value="">A</option>
+                        <option value="">B</option>
+                        <option value="">C</option>
+                        <option value="">D</option>
+
+
+                    </select>
+                </div>
+                <div style="padding-left:50px" class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </form>
+       
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
